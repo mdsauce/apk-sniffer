@@ -37,6 +37,7 @@ if [ ! -d "$tmpDir/res/xml" ]; then
 fi
 
 cp "$DIR/network_security_config.xml" "$tmpDir/res/xml/."
+cp "$DIR/cv_ca" "$tmpDir/res/raw/."
 if ! grep -q "networkSecurityConfig" "$tmpDir/AndroidManifest.xml"; then
   sed -E "s/(<application.*)(>)/\1 android\:networkSecurityConfig=\"@xml\/network_security_config\" \2 /" "$tmpDir/AndroidManifest.xml" > "$tmpDir/AndroidManifest.xml.new"
   mv "$tmpDir/AndroidManifest.xml.new" "$tmpDir/AndroidManifest.xml"
