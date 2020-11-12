@@ -21,7 +21,13 @@ APKTOOL is not needed anymore.
 
 ~~```brew install apktool```~~
 
+- Certificate that will be re-encrypting traffic.  
+For Charles see [here](https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/).
+
 ## Usage
+
+NOTE: Get your encrypting cert and add it to this directory and name it `cv_ca`.  
+You can call it something else but you will need to change the name in `addSecurityExceptions.sh` and `network_security_config.xml`.
 
 The script take two arguments: 
 1) APK file path.
@@ -37,3 +43,5 @@ or
 ./addSecurityExceptions.sh myApp.apk ~/.android/debug.keystore
 
 ```
+
+You should see a app called myApp_new.apk created.
