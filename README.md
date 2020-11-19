@@ -13,6 +13,10 @@ This script injects into the APK network security exceptions that allow third-pa
 Download the script and the XML file and place them in the same directory.
 
 ### Prerequisites
+- Certificate that will be re-encrypting traffic.  Be sure to get the Charles Root Certificate and not the Root Cert + Key. For Charles see [here](https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/).
+
+- `~/.android/debug.keystore`. If you don't have it you can try generating it https://stackoverflow.com/questions/8576732/there-is-no-debug-keystore-in-android-folder
+
 APKTOOL is not needed anymore.
 
 ~~You will need `apktool` and the Android SDK installed~~
@@ -21,8 +25,7 @@ APKTOOL is not needed anymore.
 
 ~~```brew install apktool```~~
 
-- Certificate that will be re-encrypting traffic.  
-For Charles see [here](https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/).
+
 
 ## Usage
 
