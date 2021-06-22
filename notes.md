@@ -63,4 +63,7 @@ it now works ty Enrique
 So the app launches but clicking the orane button leads to nothing. No HTTP calls show up in charles (for the customers domain anyway). And the screen just sits on a big blank white page.
 
 This step may have been missing? doing this is the terminal step in the script. Trying again.
+
+```
 jarsigner -verbose -keystore ~/.android/debug.keystore -storepass android -keypass android ./hand-modified-mdb.apk androiddebugkey
+```
