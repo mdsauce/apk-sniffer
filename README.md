@@ -13,7 +13,7 @@ This script injects into the APK network security exceptions that allow third-pa
 2. Register the `network_security_config.xml` file in the AndroidManifest.xml file.
 3. Repackage the app with the jarsigner.
 
-There may also be some "enable debug" mode stuff in here too.  Its worth noting here that you MUST use a Debug build of your app. See some [differences between Debug vs Production](https://stackoverflow.com/questions/38864358/difference-between-debug-and-release-apks).
+There may also be some "enable debug" mode stuff in here too.  Its worth noting here that you MUST use a Debug build of your app. See some [differences between Debug vs Production](https://stackoverflow.com/questions/38864358/difference-between-debug-and-release-apks) and the [Android Stuido docs](https://developer.android.com/studio/publish/preparing).
 
 ## Getting Started
 
