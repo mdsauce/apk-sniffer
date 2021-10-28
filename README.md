@@ -7,12 +7,12 @@ More info:
 This script injects into the APK network security exceptions that allow third-party software like Charles Proxy/Fiddler to listen to the network requests and responses of some Android applications.
 
 ## High Level Steps
-1. Split the .apk file into a nice normal folder where we can add the Charlse Certificate. `java -jar ./apktool.jar d -f -s -o ./del_me mdb-clx-master-testk8s-3.7.9-776-debug.apk`
-1. Put the charles certificate (aka cv_ca) in /res/raw or a similar location.
+1. Split the .apk file into a nice normal folder where we can add the Charlse Certificate. `java -jar ./apktool.jar d -f -s -o ./tmp_app_folder original-app.apk`
+1. Put the charles certificate (aka cv_ca) in `/res/raw` or a similar location.
 1. Trust the Charles Certificate via the `network_security_config.xml` file. See the [example network_security_config.xml](./network_security_config.xml)
 1. Register the `network_security_config.xml` file in the AndroidManifest.xml file. May already have been done.
 1. Put the app back together `java -jar ./apktool.jar b -o ./hand-modified-app.apk tmp_app_folder`
-1. Repackage the app with the `jarsigner.jarsigner -verbose -keystore ~/.android/debug.keystore -storepass android -keypass android ./hand-modified-mdb.apk androiddebugkey`. You may have to run this if you get an error.`keytool -genkey -v -keystore ~/.android/debug.keystore -storepass android -alias androiddebugkey -keypass android -dname "CN=Android Debug,O=Android,C=US"`
+1. Repackage the app with the `jarsigner.jarsigner -verbose -keystore ~/.android/debug.keystore -storepass android -keypass android ./modified-app.apk androiddebugkey`. You may have to run this if you get an error.```keytool -genkey -v -keystore ~/.android/debug.keystore -storepass android -alias androiddebugkey -keypass android -dname "CN=Android Debug,O=Android,C=US"```
 
 There may also be some "enable debug" mode stuff in here too.  Its worth noting here that you MUST use a Debug build of your app. See some [differences between Debug vs Production](https://stackoverflow.com/questions/38864358/difference-between-debug-and-release-apks) and the [Android Stuido docs](https://developer.android.com/studio/publish/preparing).
 
