@@ -38,7 +38,7 @@ APKTOOL is not needed anymore.
 
 ## Usage
 
-NOTE: Get your encrypting cert and add it to this directory and name it `cv_ca`.  
+NOTE: Get your encrypting cert and add it to the `/res` directory and name it `cv_ca`.  
 You can call it something else but you will need to change the name in `addSecurityExceptions.sh` and `network_security_config.xml`.
 
 The script take two arguments: 
