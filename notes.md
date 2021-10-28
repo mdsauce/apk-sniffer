@@ -4,7 +4,6 @@ taken by Max D.
 This cracked open the app
 java -jar ./apktool.jar d -f -s -o ./del_me mdb-clx-master-testk8s-3.7.9-776-debug.apk
 
-
 ## adding the Charles cert
 Seems simple at first. two steps
 
