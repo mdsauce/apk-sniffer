@@ -66,3 +66,7 @@ This step may have been missing? doing this is the terminal step in the script. 
 ```
 jarsigner -verbose -keystore ~/.android/debug.keystore -storepass android -keypass android ./hand-modified-mdb.apk androiddebugkey
 ```
+
+### Tunnels
+bumping traffic appears
+no bump traffic no appear
